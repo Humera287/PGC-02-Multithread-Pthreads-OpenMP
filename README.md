@@ -647,41 +647,45 @@ For the performance workload used in this experiment, both methods achieved very
 
 ```text
 PGC-02-Multithread-Pthreads-OpenMP/
-├── README.md                                                 # Laboratory technical report
-├── .gitignore                                                # Git ignore file for binaries
 │
-├── thread1.c                                                 # Step 1: Single thread creation and joining
-├── thread2.c                                                 # Step 2: Spawning multiple threads (4 threads)
-├── thread_sum.c                                              # Step 3: Array chunk partitioning and partial sums
-├── race.c                                                    # Step 4: Pthreads race condition demonstration
-├── mutex.c                                                   # Step 5: Fixing race condition with pthread_mutex
+├── README.md
+├── .gitignore
 │
-├── omp1.c                                                    # Step 6: OpenMP parallel region and thread IDs
-├── omp_sum.c                                                 # Step 7: OpenMP work-sharing loop and reduction
-├── omp_race.c                                                # Step 8: OpenMP race condition demonstration
-├── omp_critical.c                                            # Step 9: OpenMP critical section mutual exclusion
-├── omp_barrier.c                                             # Step 10: OpenMP phased barrier coordination
+├── pthreads/
+│   ├── thread1.c
+│   ├── thread2.c
+│   ├── thread_sum.c
+│   ├── race.c
+│   └── mutex.c
 │
-├── sequential.c                                              # Step 11: Single-threaded summation baseline (N=10^9)
-├── pthread_perf.c                                            # Step 12 & 13: Pthreads scalability benchmark (1-16T)
-├── omp_perf.c                                                # Step 14: OpenMP scalability benchmark (1-16T)
+├── openmp/
+│   ├── omp1.c
+│   ├── omp_sum.c
+│   ├── omp_race.c
+│   ├── omp_critical.c
+│   └── omp_barrier.c
 │
-└── images/                                                   # Terminal execution outputs & performance charts
-    ├── 00_wsl_gcc_environment.jpeg                           # WSL & GCC version check
-    ├── 01_pthread_single_thread.jpeg                         # Step 1 terminal output
-    ├── 02_pthread_multiple_threads.jpeg                      # Step 2 terminal output
-    ├── 03_pthread_work_distribution_sum.jpeg                 # Step 3 terminal output
-    ├── 04_pthread_race_condition.jpeg                        # Step 4 terminal output
-    ├── 05_pthread_mutex_fixed.jpeg                           # Step 5 terminal output
-    ├── 06_omp_parallel_hello_32threads.jpeg                  # Step 6 terminal output (32 threads)
-    ├── 07_omp_sum_reduction.jpeg                             # Step 7 terminal output
-    ├── 08_omp_race_condition.jpeg                            # Step 8 terminal output
-    ├── 09_omp_critical_section.jpeg                          # Step 9 terminal output
-    ├── 10_omp_barrier_synchronization.jpeg                   # Step 10 terminal output
-    ├── 11_sequential_baseline.jpeg                           # Step 11 terminal output
-    ├── 12_pthread_perf_all_threads.jpeg                      # Step 12 & 13 terminal benchmark output
-    ├── 13_omp_perf_all_threads.jpeg                          # Step 14 terminal benchmark output
-    ├── execution_time_vs_threads.png                         # High-res Execution Time graph
-    ├── speedup_vs_threads.png                                # High-res Speedup graph
-    └── efficiency_vs_threads.png                             # High-res Efficiency graph
+├── performance/
+│   ├── sequential.c
+│   ├── pthread_perf.c
+│   └── omp_perf.c
+│
+└── images/
+    ├── 00_wsl_ubuntu_gcc_environment.png
+    ├── 01_pthread_single_thread.png                      
+    ├── 02_pthread_multiple_threads.png                   
+    ├── 03_pthread_work_distribution_sum.png              
+    ├── 04_pthread_race_condition.png                   
+    ├── 05_pthread_mutex_fixed.png                    
+    ├── 06_omp_parallel_hello_32threads.png           
+    ├── 07_omp_sum_reduction.png                    
+    ├── 08_omp_race_condition.png                       
+    ├── 09_omp_critical_section.png                     
+    ├── 10_omp_barrier_synchronization.png            
+    ├── 11_sequential_baseline.png                          
+    ├── 12_pthread_perf_all_threads.png                
+    ├── 13_omp_perf_all_threads.png                      
+    ├── execution_time_vs_threads.png                     
+    ├── speedup_vs_threads.png                               
+    └── efficiency_vs_threads.png                           
 ```
